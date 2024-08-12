@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slide{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    background-color: #fff;
+    transition: 0.5s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.titulo1{
+    color: orange;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px 0; 
+    margin-left: 50px; 
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul a {
+    color: #011a01;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 5px;
+}
+ul li a i {
+    margin-right: 10px;
+}
+ul li a:hover {
+    background-color: #ffa500; 
+    color: white; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.05); 
+}
+.lineaa{
+    display: none;
+}
+
+.toggle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 20px; 
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #011a01;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top-line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.toggle .mid-line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.toggle .bottom-line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input:checked ~ .toggle .top-line{
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+input:checked ~ .toggle .mid-line{
+    opacity: 0;
+}
+
+input:checked ~ .toggle .bottom-line{
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+input:checked ~ .slide{
+    transform: none;
+    left: 0;
+}
